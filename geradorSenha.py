@@ -35,4 +35,16 @@ label_title = ctk.CTkLabel(
 )
 label_title.pack(pady=15)
 
+# Frame inferior
+lower_frame = ctk.CTkFrame(
+    app, 
+    corner_radius=20,
+    border_width=2,
+    border_color="#4e4376",
+    fg_color=("gray90", "gray13")
+)
+lower_frame.pack(pady=5, padx=15, fill="both", expand=True)
+
+
+
 app.mainloop()

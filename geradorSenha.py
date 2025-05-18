@@ -2,6 +2,38 @@ import random
 import customtkinter as ctk
 from tkinter import messagebox
 
+def change_label_result(password):
+    label_result.configure(text=''.join(password))
+
+def generate_password():
+    try:
+        max_length = int(entry_size.get())
+
+        if max_length < 4 or max_length > 30:
+            messagebox.showwarning("Erro", "A senha deve ter entre 4 e 30 caracteres")
+            return
+        
+        numbers = list(range(0,10)) 
+        letters = list("AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz")
+        symbols = ["!", "@", "#", "$", "%", "&", "?"]
+        password = []
+
+        num_letters = (max_length - 1) // 2 #Reserva 1 espaço para o símbolo
+        num_numbers = max_length - 1 - num_letters #Reserva 1 espaço para o símbolo
+
+        for i in range(num_numbers):
+            password.append(str(random.choice(numbers)))
+        
+        for i in range(num_letters):
+            password.append(random.choice(letters))
+
+        password.append(random.choice(symbols))
+        random.shuffle(password)
+        change_label_result(password)
+
+    except ValueError:
+        messagebox.showerror("Erro", "Digite um número válido")
+
 # Configuração de aparência
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")

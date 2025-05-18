@@ -45,6 +45,61 @@ lower_frame = ctk.CTkFrame(
 )
 lower_frame.pack(pady=5, padx=15, fill="both", expand=True)
 
+# Widgets
+label_size = ctk.CTkLabel(
+    lower_frame, 
+    text="🔢 Tamanho da senha [4-30] :",
+    font=LABEL_FONT,
+    text_color="#4e4376"
+)
+label_size.pack(pady=(25, 5))
 
+entry_size = ctk.CTkEntry(
+    lower_frame, 
+    placeholder_text="Ex.: 12", 
+    width=220, 
+    height=40,
+    font=ENTRY_FONT,
+    corner_radius=10,
+    border_color="#4e4376",
+    fg_color=("gray95", "gray10")
+)
+entry_size.pack(pady=5)
+
+button = ctk.CTkButton(
+    lower_frame, 
+    text="⚡ Gerar Senha", 
+    width=180, 
+    height=40,
+    font=BUTTON_FONT, 
+    fg_color="#4e4376", 
+    hover_color="#2b5876",
+    corner_radius=10,
+    border_width=2,
+    border_color="#2b5876",
+    command=generate_password
+)
+button.pack(pady=20)
+
+label_password = ctk.CTkLabel(
+    lower_frame, 
+    text="🔑 Senha Gerada:", 
+    font=LABEL_FONT,
+    text_color="#4e4376"
+)
+label_password.pack(pady=(10, 5))
+
+label_result = ctk.CTkLabel(
+    lower_frame, 
+    text="", 
+    font=RESULT_FONT,
+    text_color="#2b5876",
+    bg_color=("gray95", "gray10"),
+    corner_radius=8,
+    width=300,
+    height=40,
+    anchor="center"
+)
+label_result.pack(pady=(0, 20))
 
 app.mainloop()

@@ -4,7 +4,7 @@ Um pequeno gerador de senhas aleatórias com suporte a letras, números e símbo
 
 ---
 
-## 📸 Demonstração (opcional)
+## 📸 Demonstração 
 
 ![Tela Inicial](image.png)
 

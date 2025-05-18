@@ -17,5 +17,22 @@ BUTTON_FONT = ("Open Sans", 14, "bold")
 ENTRY_FONT = ("Open Sans", 13)
 RESULT_FONT = ("Consolas", 18)
 
+# Frame superior 
+upper_frame = ctk.CTkFrame(
+    app, 
+    corner_radius=20,
+    border_width=2,
+    border_color="#4e4376",
+    fg_color=("gray90", "gray13")
+)
+upper_frame.pack(pady=15, padx=15, fill="x")
+
+label_title = ctk.CTkLabel(
+    upper_frame, 
+    text="🔐 Gerador de Senhas Seguras",
+    font=TITLE_FONT,
+    text_color="#4e4376"
+)
+label_title.pack(pady=15)
 
 app.mainloop()

@@ -102,4 +102,13 @@ label_result = ctk.CTkLabel(
 )
 label_result.pack(pady=(0, 20))
 
+# Rodapé
+footer = ctk.CTkLabel(
+    app, 
+    text="© 2025 Gerador de Senhas Seguras | Desenvolvido com Python",
+    font=("Open Sans", 10),
+    text_color="gray50"
+)
+footer.pack(side="bottom", pady=5)
+
 app.mainloop()
